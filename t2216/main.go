@@ -3,7 +3,7 @@ package main
 import "fmt"
 
 func main() {
-	nums := []int{8, 8, 8, 8}
+	nums := []int{1, 1, 2, 2, 2, 3, 3}
 	fmt.Println(minD(nums))
 }
 
@@ -17,7 +17,7 @@ func minD(nums []int) int {
 	delNum := 0
 
 	for i := 0; i < count; i++ {
-		if (i+delNum)%2 == 0 {
+		if (i-delNum)%2 == 0 {
 			for j := i + 1; j < count; j++ {
 				if nums[i] == nums[j] {
 					delNum++
