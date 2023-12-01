@@ -44,7 +44,7 @@ func closeStrings(word1 string, word2 string) bool {
 	sort.Ints(sk1)
 	sort.Ints(sk2)
 
-	if reflect.DeepEqual(sk1, sk2) == false {
+	if !reflect.DeepEqual(sk1, sk2) {
 		return false
 	}
 
