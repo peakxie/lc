@@ -19,3 +19,17 @@ func max(i, j int) int { // W: func `max` is unused (unused)
 	}
 	return j
 }
+
+// 第二种解法
+func maxProfit(prices []int) int {
+	n := len(prices)
+
+	buy := -prices[0]
+	sell := 0
+
+	for i := 1; i < n; i++ {
+		buy = max(buy, sell-prices[i])
+		sell = max(sell, buy+prices[i])
+	}
+	return sell
+}

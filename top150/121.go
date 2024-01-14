@@ -25,3 +25,18 @@ func max(i, j int) int {
 	}
 	return j
 }
+
+// 第二种解法
+func maxProfit(prices []int) int {
+	n := len(prices)
+
+	buy := -prices[0]
+	sell := 0
+
+	for i := 1; i < n; i++ {
+		buy = max(buy, -prices[i])
+		sell = max(sell, buy+prices[i])
+	}
+
+	return sell
+}
