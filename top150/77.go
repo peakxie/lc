@@ -16,8 +16,8 @@ func combine(n int, k int) (ans [][]int) {
 		}
 
 		for j := i; j <= n && i+1 != j; j++ {
-			dfs(i+1, item)
 			dfs(i+1, append(item, j))
+			dfs(i+1, item)
 		}
 
 	}
